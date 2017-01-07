@@ -5,12 +5,15 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Routing;
 
+using Heliar.Composition.Web;
+
 namespace RAW.ApiHost
 {
     public class WebApiApplication : System.Web.HttpApplication
     {
         protected void Application_Start()
         {
+            HeliarCompositionProvider provider = new HeliarCompositionProvider();
             GlobalConfiguration.Configure(WebApiConfig.Register);
         }
     }
